@@ -3,10 +3,10 @@ pragma solidity ^0.8.0;
 
 contract SimpleBank{
     mapping(address => uint) internal balance;
-    event transaction(address depositor, uint amount, string statement);
+    event transaction(address accountHolder, uint amount, string statement);
 
     modifier balanceAvailabilty(uint amount){
-        uint userBalance = balance[msg.sender];
+        uint accountHolderBalance = balance[msg.sender];
         require(userBalance >= amount, "insufficient balance");
         _;
     }
