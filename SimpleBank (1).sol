@@ -7,7 +7,7 @@ contract SimpleBank{
 
     modifier balanceAvailabilty(uint amount){
         uint accountHolderBalance = balance[msg.sender];
-        require(userBalance >= amount, "insufficient balance");
+        require(accountHolderBalance >= amount, "insufficient balance");
         _;
     }
 
