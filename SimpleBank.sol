@@ -13,7 +13,7 @@ contract SimpleBank{
 
     function Deposit() payable public{
     
-    	require(msg.value/1 ether >= 1, "make sure to deposit amount in ether");
+    	require(msg.value/1 ether > 0, "make sure to deposit amount in ether");
     	
         balance[msg.sender] += msg.value;
         emit transaction(msg.sender, msg.value * 1 ether, "deposited");
